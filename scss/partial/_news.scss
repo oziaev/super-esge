@@ -1,0 +1,103 @@
+@use "_mixin" as m;
+@use "_common" as *;
+
+#news {
+  .fv {
+    background-image: url(/img/news-fv.jpg);
+
+    .page-title {
+      color: $blue-3;
+    }
+  }
+
+    .news {
+      margin-bottom: $section-space-pc;
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 24px;
+
+        @include m.tb {
+          grid-template-columns: repeat(2,1fr);
+        }
+
+        @include m.sp-650 {
+          grid-template-columns: repeat(1,1fr);
+        }
+
+        .post {
+          font-family: $ff-jost;
+
+          a {
+            transition: .3s ease;
+            
+            &:hover {
+              opacity: $hover;
+            }
+
+            img {
+              margin-bottom: 16px;
+            }
+
+            .date {
+              display: inline-block;
+              margin-bottom: 24px;
+
+              @include m.tb {
+                font-size: $fs-small;
+                margin-bottom: 8px;
+              }
+            }
+
+            .news-title {
+              font-size: $fs-24;
+              font-weight: $fw-base;
+
+              @include m.tb {
+                font-size: $fs-20;
+              }
+
+            }
+          }
+        }
+      }
+
+      .pagination {
+        text-align: center;
+        margin-top: $section-space-sp;
+        
+        a {
+          cursor: pointer;
+          color: $blue-3;
+          font-weight: $fw-bold;
+          line-height: 35px;
+          transition: .3s ease;
+          margin-right: 24px;
+
+          @include m.sp {
+            margin-right: 16px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:hover {
+            opacity: $hover;
+          }
+        }
+
+        .page {
+          width: 35px;
+          height: 35px;
+          border: 1px solid $blue-3;
+        }
+
+        .current {
+          color: $white;
+          background-color: $blue-3;
+        }
+      }
+    }
+}

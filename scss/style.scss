@@ -1,0 +1,14 @@
+
+@use 'partial/mixin';
+@use 'partial/common';
+
+@use 'partial/header';
+@use 'partial/footer';
+
+@use 'partial/top';
+@use 'partial/services';
+@use 'partial/company';
+@use 'partial/news';
+@use 'partial/single';
+@use 'partial/recruitment';
+@use 'partial/contact';

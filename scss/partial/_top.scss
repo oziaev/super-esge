@@ -1,0 +1,506 @@
+@use "_mixin" as m;
+@use "_common" as *;
+
+.top {
+  
+  #fv {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+  
+    &::after {
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: $blue-1-50;
+      z-index: 2;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: block;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fv-title {
+      width: 100%;
+      text-align: center;
+      color: $white;
+      font-size: $fs-h2;
+      text-shadow: $shadow;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      margin-inline: auto;
+      z-index: 10;
+
+      @include m.tb {
+        font-size: 3.5rem;
+      }
+      
+      @include m.sp-650 {
+        font-size: 2.4rem;
+      }
+    }
+
+    .scroll {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 90px;
+      z-index: 10;
+
+      .scroll-text {
+        color: $white;
+        margin-bottom: 5px;
+
+        @include m.tb {
+          font-size: 1.2rem;
+        }
+      }
+
+      .scroll-border {
+        width: 30px;
+        height: 60px;
+        position: relative;
+        border: 1px solid $white;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-inline: auto;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 2px;
+          height: 15px;
+          left: 0;
+          right: 0;
+          background: $white;
+          animation: scrollbar 2.0s ease-in-out infinite;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  #hero {
+    position: relative;
+    color: $white;
+    background-color: $blue-1;
+    padding: $section-space-pc 15px 48px 15px;
+    margin-bottom: $section-space-pc;
+
+    @include m.sp {
+      padding: 48px 15px 48px 15px;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include m.tb {
+        flex-direction: column;
+      }
+
+      .left {
+        width: 50%;
+        font-size: 3.5rem;
+        letter-spacing: $ls-6;
+        line-height: $lh-79;
+        font-weight: $fw-bold;
+        margin-right: 40px;
+
+        @include m.tb {
+          width: 100%;
+          font-size: 2.5rem;
+          line-height: $lh-5;
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+
+        @include m.sp {
+          font-size: $fs-20;
+          letter-spacing: $ls-4;
+        }
+      }
+
+      .right {
+        width: 50%;
+        font-size: $fs-24;
+        font-weight: $fw-bold;
+        letter-spacing: $ls-6;
+        line-height: $lh-2;
+
+        @include m.tb {
+          width: 100%;
+          font-size: $fs-20;
+          line-height: $lh-5;
+        }
+
+        @include m.sp {
+          font-size: $fs-middle;
+        }
+      }
+    }
+
+    .scroll-divider {
+      overflow: hidden;
+      margin-top: $section-space-pc;
+
+      @include m.tb {
+        margin-top: $section-space-sp;
+      }
+
+      @include m.tb {
+        margin-top: 32px;
+      }
+
+      .scroll-text {
+        color: $white;
+        font-size: 9rem;
+        font-weight: $fw-bold;
+        opacity: 0.4;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+
+        @include m.tb {
+          font-size: 8rem;
+        }
+
+        @include m.sp {
+          font-size: 5rem;
+        }
+      }
+    }
+  }
+  
+  #partnership {
+    margin-bottom: $section-space-pc;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      align-items: center;
+      justify-items: center;
+
+      img {
+        &:nth-child(1) {
+          width: 75%;
+        }
+      }
+    }
+  }
+
+  #services {
+    background-color: $blue-3;
+    padding-block: $section-space-pc;
+    margin-bottom: $section-space-pc;
+
+    .section-title {
+      color: $white;
+    }
+
+    .box {
+      background-color: $white;
+      padding: $section-space-sp;
+
+      @include m.sp-650 {
+        padding: 32px;
+      }
+
+      @include m.sp {
+        padding: 16px;
+      }
+
+      .list {
+        display: flex;
+        justify-content: space-between; 
+        align-items: end;
+        margin-bottom: $section-space-pc;
+
+        @include m.tb {
+          flex-direction: column;
+          margin-bottom: $section-space-sp;
+
+          &:nth-child(2) {
+            flex-direction: column-reverse;
+          }
+        }
+
+        @include m.sp {
+          margin-bottom: 32px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .item {
+          width: 50%;
+          margin-right: $section-space-sp;
+
+          @include m.tb {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 40px;
+          }
+
+          @include m.sp {
+            margin-bottom: 24px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .title {
+            color: $blue-3;
+          }
+
+          .text {
+            font-weight: $fw-bold;
+            line-height: $lh-4;
+
+            @include m.tb {
+              line-height: $lh-79;
+            }
+
+            @include m.sp {
+              line-height: $lh-5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #news {
+    font-family: $ff-jost;
+    margin-bottom: $section-space-pc;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+
+      @include m.tb {
+        flex-direction: column;
+      }
+
+      .left {
+        width: 35%;
+
+        @include m.tb {
+          width: 100%;
+        }
+
+        img {
+          width: calc(100% + ((100vw - 1200px) / 2)); // containerの外まで伸ばす
+          margin-left: calc(-1 * ((100vw - 1200px) / 2)); // 左にはみ出す
+          
+          @include m.tb-1100 {
+            width: calc(100% + ((100vw - 900px) / 2)); // containerの外まで伸ばす
+            margin-left: calc(-1 * ((100vw - 1000px) / 2)); // 左にはみ出す
+          }
+
+          @include m.tb {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+
+      .right {
+        width: 50%;
+        margin-top: $section-space-sp;
+
+        @include m.tb {
+          width: 100%;
+        }
+
+        @include m.sp {
+          margin-top: 32px;
+        }
+
+        .post {
+          border-bottom: 1px solid $black;
+          margin-bottom: 16px;
+
+          a {
+            transition: .3s ease;
+
+            &:hover {
+              opacity: $hover;
+            }
+
+            .date {
+              display: inline-block;
+              margin-bottom: 16px;
+
+              @include m.sp {
+                font-size: $fs-small;
+              }
+            }
+            
+            .news-title {
+              font-size: $fs-24;
+              font-weight: $fw-base;
+              margin-left: 40px;
+              margin-bottom: 16px;
+
+              @include m.sp {
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+
+        .btn-container {
+          @include m.tb {
+            text-align: center;
+          }
+
+          .btn {
+            margin-top: $section-space-sp;
+          }
+        }
+      }
+    }
+  }
+
+  #company {
+    color: $white;
+    background-color: $blue-1;
+    padding-block: $section-space-pc;
+
+    .section-title {
+      color: $white;
+    }
+
+    .company-table {
+      width: 100%;
+      font-size: $fs-24;
+      font-weight: $fw-bold;
+
+      @include m.tb {
+        font-size: $fs-20;
+      }
+
+      @include m.sp {
+        font-size: $fs-base;
+      }
+
+      tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        text-align: left;
+        border-bottom: 2px solid $white;
+        padding: 24px 8px;
+        margin-bottom: 32px;
+
+        @include m.sp {
+          border-bottom: 1px solid $white;
+          padding: 16px 8px;
+          margin-bottom: 24px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        th {
+          width: 30%;
+        }
+
+        td {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  &.top-en {
+    #hero {
+      .left {
+        font-size: 3.8rem;
+        line-height: $lh-5;
+
+        @include m.tb {
+          font-size: 2.5rem;
+        }
+
+        @include m.sp {
+          font-size: $fs-20;
+        }
+      }
+
+      .right {
+        line-height: $lh-5;
+      }
+    }
+
+    #services {
+      .box {
+        .title {
+          line-height: 1.2;
+        }
+      }
+    }
+
+    #company {
+      tr {
+        @include m.sp {
+          font-size: 1.2rem;
+        }
+
+        th {
+          @include m.sp {
+            width: 35%;
+          }
+        }
+
+        td {
+          @include m.sp {
+            width: 65%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes scrollbar {
+  0% {
+    opacity: 0;
+    top: 10px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 30px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,53 @@
+@use "_mixin" as m;
+@use "_common" as *;
+
+.company {
+
+  .fv {
+    background-image: url(/img/company-fv.jpg);
+  }
+
+  .company {
+    margin-bottom: $section-space-pc;
+
+    .company-table {
+      width: 100%;
+      font-size: $fs-24;
+      font-weight: $fw-bold;
+      text-align: left;
+
+      @include m.tb {
+        font-size: $fs-20;
+      }
+
+      @include m.sp-650 {
+        font-size: 1.8rem;
+      }
+
+      @include m.sp {
+        font-size: 1.6rem;
+      }
+
+      tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        border-bottom: 2px solid $border;
+        padding: 24px 8px;
+        margin-bottom: 32px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        th {
+          width: 30%;
+        }
+
+        td {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

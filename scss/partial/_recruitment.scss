@@ -1,0 +1,115 @@
+@use "_mixin" as m;
+@use "_common" as *;
+
+#recruitment-jp {
+  // margin-bottom: $section-space-pc;
+
+  .fv {
+    background-image: url(/img/recruitment-fv.jpg);
+
+    .page-title {
+      color: $blue-3;
+    }
+  }
+
+  .recruitment {
+    .recruitment-title {
+      width: 100%;
+      color: $white;
+      font-size: 3.2rem;
+      font-weight: $fw-base;
+      line-height: $lh-2;
+      text-align: center;
+      letter-spacing: $ls-6;
+      background-color: $blue-1;
+      margin-bottom: 40px;
+
+      @include m.tb {
+        font-size: $fs-24;
+        margin-bottom: 24px;
+      }
+
+      @include m.sp {
+        font-size: $fs-20;
+      }
+    }
+    
+    .sub-title {
+      font-size: $fs-20;
+      font-weight: $fw-bold;
+      text-align: center;
+      margin-bottom: $section-space-sp;
+
+      @include m.tb {
+        font-size: $fs-middle;
+        text-align: left;
+      }
+
+      @include m.sp {
+        margin-bottom: 24px;
+      }
+    }
+    
+    .job-table {
+      width: 100%;
+      margin-bottom: $section-space-pc;
+
+      @include m.sp {
+        margin-bottom: $section-space-sp;
+      }
+
+      tr {
+        font-size: $fs-20;
+        text-align: left;
+        letter-spacing: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $section-space-sp;
+
+        @include m.tb {
+          font-size: $fs-base;
+          margin-bottom: 32px;
+        }
+        
+        @include m.sp {
+          flex-direction: column;
+          margin-bottom: 24px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        th {
+          width: 20%;
+          font-weight: $fw-base;
+          color: $blue-1;
+
+          @include m.sp {
+            width: 100%;
+            margin-bottom: 8px;
+          }
+          
+          span {
+            display: block;
+          }
+        }
+        
+        td {
+          width: 80%;
+          font-weight: 300;
+
+          @include m.sp {
+            width: 100%;
+          }
+
+          ul {
+            li {
+              margin-bottom: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

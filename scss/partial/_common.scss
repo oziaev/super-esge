@@ -1,0 +1,202 @@
+@use "_mixin" as m;
+
+// カラー
+$blue-1: #3c83bb;
+$blue-1-50: rgba(60, 131, 187, .5);
+$blue-2: #97D4F9;
+$blue-3: #0C3256;
+$blue-3-50: rgba(12, 50, 86, 0.5);
+$black: #000;
+$white: #fff;
+$fv: #3C83BB;
+$border: rgba(228, 223, 223, 1);
+
+$shadow: 12px 12px 8.4px rgba(0, 0, 0, 0.25);
+
+// フォント
+$ff-sans: "Noto Sans JP", sans-serif;
+$ff-jost: "Jost", sans-serif;
+
+$fs-h2: 5rem;
+$fs-h3: 5.9rem;
+$fs-h4: 4.8rem;
+
+$fs-38: 3.8rem;
+$fs-24: 2.4rem;
+$fs-20: 2rem;
+$fs-middle: 1.8rem;
+$fs-base: 1.6rem;
+$fs-small: 1.4rem;
+
+$fw-bold: 700;
+// $fw-middle: 500;
+$fw-base: 500;
+
+$ls-4: 0.04em;
+$ls-6: 0.05em;
+$ls-9: 0.09em;
+
+$lh-4: 3;
+$lh-2: 2;
+$lh-79: 1.79;
+$lh-5: 1.5;
+
+$hover: .5;
+
+// 
+$section-space-pc: 96px;
+$section-space-sp: 56px;
+
+// z-index管理
+// 
+
+
+// base 共通
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  font-family: $ff-sans;
+  // font-weight: $fw-bold;
+  letter-spacing: $ls-4;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $black;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+
+// 共通クラス
+
+.container {
+  max-width: 1200px;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+.wrapper {
+  max-width: 900px;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+.mainvisual {
+  width: 100%;
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  margin-top: 80px;
+  margin-bottom: $section-space-pc;
+
+  @include m.sp-650 {
+    height: 70vh;
+  }
+
+  @include m.sp {
+    height: 60vh;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    .page-title {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 15px;
+      color: $white;
+      font-size: $fs-h3;
+
+      @include m.sp-650 {
+        font-size: $fs-38;
+      }
+    }
+  }
+}
+
+.section-title {
+  font-family: $ff-jost;
+  font-size: $fs-h3;
+  letter-spacing: $ls-9;
+  color: $blue-3;
+  margin-bottom: $section-space-pc;
+
+  @include m.tb {
+    font-size: $fs-h4;
+  }
+
+  @include m.sp {
+    font-size: 3.4rem;
+    margin-bottom: $section-space-sp;
+  }
+}
+
+h4 {
+  font-size: $fs-h4;
+  margin-bottom: 24px;
+
+  @include m.tb {
+    font-size: $fs-38;
+  }
+
+  @include m.sp {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+}
+
+.btn {
+  font-size: $fs-24;
+  font-family: $ff-jost;
+  font-weight: $fw-base;
+  letter-spacing: $ls-6;
+  border: 1px solid $black;
+  transition: .3s ease;
+  padding: 16px 72px;
+
+  @include m.tb {
+    font-size: $fs-20;
+    text-align: center;
+  }
+
+  @include m.sp {
+    font-size: $fs-base;
+  }
+
+  &:hover {
+    opacity: $hover;
+  }
+}
+
+.fadein {
+  opacity: 0;
+  // transform: translateY(30px);
+  transform: translateX(-30px);
+  transition: 1s ease;
+
+  &.active{
+    opacity: 1;
+    // transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
