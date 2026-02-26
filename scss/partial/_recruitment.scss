@@ -5,7 +5,7 @@
   // margin-bottom: $section-space-pc;
 
   .fv {
-    background-image: url(/img/recruitment-fv.jpg);
+    background-image: url(../img/recruitment-fv.jpg);
 
     .page-title {
       color: $blue-3;
@@ -92,6 +92,10 @@
           
           span {
             display: block;
+
+            @include m.sp {
+              display: inline-block;
+            }
           }
         }
         
