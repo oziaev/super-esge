@@ -2,12 +2,11 @@
 @use "_common" as *;
 
 .company {
-
   .fv {
     background-image: url(../img/company-fv.jpg);
   }
 
-  .company {
+  .company-box {
     margin-bottom: $section-space-pc;
 
     .company-table {
@@ -36,16 +35,28 @@
         padding: 24px 8px;
         margin-bottom: 32px;
 
+        @include m.sp {
+          font-size: 1.2rem;
+        }
+
         &:last-child {
           margin-bottom: 0;
         }
 
         th {
           width: 30%;
+
+          @include m.sp {
+            width: 35%;
+          }
         }
 
         td {
           width: 70%;
+
+          @include m.sp {
+            width: 65%;
+          }
         }
       }
     }

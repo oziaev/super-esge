@@ -2,14 +2,13 @@
 @use "_common" as *;
 
 .top {
-  
   #fv {
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
     margin-top: 80px;
-  
+
     &::after {
       width: 100%;
       height: 100%;
@@ -46,7 +45,7 @@
       @include m.tb {
         font-size: 3.5rem;
       }
-      
+
       @include m.sp-650 {
         font-size: 2.4rem;
       }
@@ -86,7 +85,7 @@
           left: 0;
           right: 0;
           background: $white;
-          animation: scrollbar 2.0s ease-in-out infinite;
+          animation: scrollbar 2s ease-in-out infinite;
           margin: auto;
         }
       }
@@ -103,7 +102,7 @@
     @include m.sp {
       padding: 48px 15px 48px 15px;
     }
-    
+
     .container {
       display: flex;
       justify-content: space-between;
@@ -184,7 +183,7 @@
       }
     }
   }
-  
+
   #partnership {
     margin-bottom: $section-space-pc;
 
@@ -226,7 +225,7 @@
 
       .list {
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
         align-items: end;
         margin-bottom: $section-space-pc;
 
@@ -308,9 +307,11 @@
         img {
           width: calc(100% + ((100vw - 1200px) / 2)); // containerの外まで伸ばす
           margin-left: calc(-1 * ((100vw - 1200px) / 2)); // 左にはみ出す
-          
+
           @include m.tb-1100 {
-            width: calc(100% + ((100vw - 900px) / 2)); // containerの外まで伸ばす
+            width: calc(
+              100% + ((100vw - 900px) / 2)
+            ); // containerの外まで伸ばす
             margin-left: calc(-1 * ((100vw - 1000px) / 2)); // 左にはみ出す
           }
 
@@ -338,7 +339,7 @@
           margin-bottom: 16px;
 
           a {
-            transition: .3s ease;
+            transition: 0.3s ease;
 
             &:hover {
               opacity: $hover;
@@ -352,7 +353,7 @@
                 font-size: $fs-small;
               }
             }
-            
+
             .news-title {
               font-size: $fs-24;
               font-weight: $fw-base;
@@ -398,7 +399,7 @@
       }
 
       @include m.sp {
-        font-size: $fs-base;
+        font-size: 1.2rem;
       }
 
       tr {
@@ -422,10 +423,18 @@
 
         th {
           width: 30%;
+
+          @include m.sp {
+            width: 35%;
+          }
         }
 
         td {
           width: 70%;
+
+          @include m.sp {
+            width: 65%;
+          }
         }
       }
     }
@@ -455,26 +464,6 @@
       .box {
         .title {
           line-height: 1.2;
-        }
-      }
-    }
-
-    #company {
-      tr {
-        @include m.sp {
-          font-size: 1.2rem;
-        }
-
-        th {
-          @include m.sp {
-            width: 35%;
-          }
-        }
-
-        td {
-          @include m.sp {
-            width: 65%;
-          }
         }
       }
     }
