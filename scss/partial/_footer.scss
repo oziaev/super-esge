@@ -45,6 +45,10 @@
         width: 300px;
         margin-bottom: 32px;
 
+        @include m.tb-1100 {
+          margin-bottom: 24px;
+        }
+
         @include m.sp {
           width: 200px;
         }
@@ -103,35 +107,6 @@
           background-color: $blue-1;
           border-radius: 15px;
           padding: 2px 8px;
-        }
-        
-        .sns-links {
-          display: flex;
-          justify-content: flex-end;
-          
-          li {
-            width: 30px;
-            height: 30px;
-            margin-right: 16px;
-
-            &:nth-child(1) {
-              background-color: $white;
-              transition: .3s ease;
-              border-radius: 50%;
-
-              &:hover {
-                opacity: $hover;
-              }
-            }
-            
-            &:nth-child(2) {
-              width: 35px; 
-            }
-            
-            &:last-child {
-              margin-right: 0;
-            }
-          }
         }
       }
     }

@@ -178,9 +178,6 @@ h4 {
   }
 }
 #header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 1000;
 }
 @media (max-width: 1100px) {
@@ -206,21 +203,6 @@ h4 {
 #header nav .jp-en a {
   color: #fff;
   font-weight: 700;
-}
-#header nav .sns-links {
-  display: flex;
-  justify-content: space-between;
-}
-#header nav .sns-links li {
-  width: 25px;
-  height: 25px;
-  margin-right: 16px;
-}
-#header nav .sns-links li:nth-child(2) {
-  width: 30px;
-}
-#header nav .sns-links li:last-child {
-  margin-right: 0;
 }
 #header .sp-header {
   display: none;
@@ -319,9 +301,6 @@ h4 {
   margin-right: 0;
   margin-bottom: 24px;
 }
-#header.active nav .sns-links {
-  justify-content: center;
-}
 #header.active .toggle {
   top: 32px;
 }
@@ -387,6 +366,11 @@ h4 {
   width: 300px;
   margin-bottom: 32px;
 }
+@media (max-width: 1100px) {
+  #footer .container .left img {
+    margin-bottom: 24px;
+  }
+}
 @media (max-width: 430px) {
   #footer .container .left img {
     width: 200px;
@@ -438,29 +422,6 @@ h4 {
   background-color: #3c83bb;
   border-radius: 15px;
   padding: 2px 8px;
-}
-#footer .container .right nav .sns-links {
-  display: flex;
-  justify-content: flex-end;
-}
-#footer .container .right nav .sns-links li {
-  width: 30px;
-  height: 30px;
-  margin-right: 16px;
-}
-#footer .container .right nav .sns-links li:nth-child(1) {
-  background-color: #fff;
-  transition: 0.3s ease;
-  border-radius: 50%;
-}
-#footer .container .right nav .sns-links li:nth-child(1):hover {
-  opacity: 0.5;
-}
-#footer .container .right nav .sns-links li:nth-child(2) {
-  width: 35px;
-}
-#footer .container .right nav .sns-links li:last-child {
-  margin-right: 0;
 }
 
 .top #fv {
@@ -848,7 +809,7 @@ h4 {
 }
 @media (max-width: 430px) {
   .top #company .company-table {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 .top #company .company-table tr {
@@ -873,8 +834,18 @@ h4 {
 .top #company .company-table tr th {
   width: 30%;
 }
+@media (max-width: 430px) {
+  .top #company .company-table tr th {
+    width: 35%;
+  }
+}
 .top #company .company-table tr td {
   width: 70%;
+}
+@media (max-width: 430px) {
+  .top #company .company-table tr td {
+    width: 65%;
+  }
 }
 .top.top-en #hero .left {
   font-size: 3.8rem;
@@ -895,21 +866,6 @@ h4 {
 }
 .top.top-en #services .box .title {
   line-height: 1.2;
-}
-@media (max-width: 430px) {
-  .top.top-en #company tr {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 430px) {
-  .top.top-en #company tr th {
-    width: 35%;
-  }
-}
-@media (max-width: 430px) {
-  .top.top-en #company tr td {
-    width: 65%;
-  }
 }
 
 @keyframes scrollbar {
@@ -1141,31 +1097,31 @@ h4 {
 .company .fv {
   background-image: url(../img/company-fv.jpg);
 }
-.company .company {
+.company .company-box {
   margin-bottom: 96px;
 }
-.company .company .company-table {
+.company .company-box .company-table {
   width: 100%;
   font-size: 2.4rem;
   font-weight: 700;
   text-align: left;
 }
 @media (max-width: 900px) {
-  .company .company .company-table {
+  .company .company-box .company-table {
     font-size: 2rem;
   }
 }
 @media (max-width: 650px) {
-  .company .company .company-table {
+  .company .company-box .company-table {
     font-size: 1.8rem;
   }
 }
 @media (max-width: 430px) {
-  .company .company .company-table {
+  .company .company-box .company-table {
     font-size: 1.6rem;
   }
 }
-.company .company .company-table tr {
+.company .company-box .company-table tr {
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -1173,14 +1129,29 @@ h4 {
   padding: 24px 8px;
   margin-bottom: 32px;
 }
-.company .company .company-table tr:last-child {
+@media (max-width: 430px) {
+  .company .company-box .company-table tr {
+    font-size: 1.2rem;
+  }
+}
+.company .company-box .company-table tr:last-child {
   margin-bottom: 0;
 }
-.company .company .company-table tr th {
+.company .company-box .company-table tr th {
   width: 30%;
 }
-.company .company .company-table tr td {
+@media (max-width: 430px) {
+  .company .company-box .company-table tr th {
+    width: 35%;
+  }
+}
+.company .company-box .company-table tr td {
   width: 70%;
+}
+@media (max-width: 430px) {
+  .company .company-box .company-table tr td {
+    width: 65%;
+  }
 }
 
 #news .fv {
