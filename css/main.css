@@ -4,7 +4,7 @@ html {
 
 body {
   font-size: 1.6em;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Outfit", sans-serif;
   letter-spacing: 0.04em;
 }
 
@@ -75,7 +75,6 @@ img {
 }
 
 .section-title {
-  font-family: "Jost", sans-serif;
   font-size: 5.9rem;
   letter-spacing: 0.09em;
   color: #0C3256;
@@ -111,7 +110,6 @@ h4 {
 
 .btn {
   font-size: 2.4rem;
-  font-family: "Jost", sans-serif;
   font-weight: 500;
   letter-spacing: 0.05em;
   border: 1px solid #000;
@@ -145,6 +143,10 @@ h4 {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.no_post {
+  color: #000;
 }
 
 #header {
@@ -701,7 +703,6 @@ h4 {
   }
 }
 .top #news {
-  font-family: "Jost", sans-serif;
   margin-bottom: 96px;
 }
 .top #news .container {
@@ -1178,9 +1179,6 @@ h4 {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-#news .news .container .post {
-  font-family: "Jost", sans-serif;
-}
 #news .news .container .post a {
   transition: 0.3s ease;
 }
@@ -1213,7 +1211,8 @@ h4 {
   text-align: center;
   margin-top: 56px;
 }
-#news .news .pagination a {
+#news .news .pagination a,
+#news .news .pagination span {
   cursor: pointer;
   color: #0C3256;
   font-weight: 700;
@@ -1222,24 +1221,33 @@ h4 {
   margin-right: 24px;
 }
 @media (max-width: 430px) {
-  #news .news .pagination a {
+  #news .news .pagination a,
+  #news .news .pagination span {
     margin-right: 16px;
   }
 }
-#news .news .pagination a:last-child {
+#news .news .pagination a:last-child,
+#news .news .pagination span:last-child {
   margin-right: 0;
 }
-#news .news .pagination a:hover {
+#news .news .pagination a:hover,
+#news .news .pagination span:hover {
   opacity: 0.5;
 }
-#news .news .pagination .page {
+#news .news .pagination .page-numbers:not(.prev):not(.next) {
   width: 35px;
   height: 35px;
   border: 1px solid #0C3256;
+  display: inline-block;
+  text-align: center;
 }
 #news .news .pagination .current {
+  width: 35px;
+  height: 35px;
   color: #fff;
   background-color: #0C3256;
+  display: inline-block;
+  text-align: center;
 }
 
 #single .fv {
@@ -1368,7 +1376,6 @@ h4 {
   }
 }
 #single .main .sidebar-news .new-news {
-  font-family: "Jost", sans-serif;
   font-size: 1.4rem;
   letter-spacing: 0.09em;
   margin-bottom: 16px;
@@ -1428,13 +1435,13 @@ h4 {
   }
 }
 
-#recruitment-jp .fv {
+.recruitment .fv {
   background-image: url(../img/recruitment-fv.jpg);
 }
-#recruitment-jp .fv .page-title {
+.recruitment .fv .page-title {
   color: #0C3256;
 }
-#recruitment-jp .recruitment .recruitment-title {
+.recruitment .recruitment-box .recruitment-title {
   width: 100%;
   color: #fff;
   font-size: 3.2rem;
@@ -1446,43 +1453,43 @@ h4 {
   margin-bottom: 40px;
 }
 @media (max-width: 900px) {
-  #recruitment-jp .recruitment .recruitment-title {
+  .recruitment .recruitment-box .recruitment-title {
     font-size: 2.4rem;
     margin-bottom: 24px;
   }
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .recruitment-title {
+  .recruitment .recruitment-box .recruitment-title {
     font-size: 2rem;
   }
 }
-#recruitment-jp .recruitment .sub-title {
+.recruitment .recruitment-box .sub-title {
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 56px;
 }
 @media (max-width: 900px) {
-  #recruitment-jp .recruitment .sub-title {
+  .recruitment .recruitment-box .sub-title {
     font-size: 1.8rem;
     text-align: left;
   }
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .sub-title {
+  .recruitment .recruitment-box .sub-title {
     margin-bottom: 24px;
   }
 }
-#recruitment-jp .recruitment .job-table {
+.recruitment .recruitment-box .job-table {
   width: 100%;
   margin-bottom: 96px;
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .job-table {
+  .recruitment .recruitment-box .job-table {
     margin-bottom: 56px;
   }
 }
-#recruitment-jp .recruitment .job-table tr {
+.recruitment .recruitment-box .job-table tr {
   font-size: 2rem;
   text-align: left;
   letter-spacing: 0;
@@ -1491,50 +1498,76 @@ h4 {
   margin-bottom: 56px;
 }
 @media (max-width: 900px) {
-  #recruitment-jp .recruitment .job-table tr {
+  .recruitment .recruitment-box .job-table tr {
     font-size: 1.6rem;
     margin-bottom: 32px;
   }
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .job-table tr {
+  .recruitment .recruitment-box .job-table tr {
     flex-direction: column;
     margin-bottom: 24px;
   }
 }
-#recruitment-jp .recruitment .job-table tr:last-child {
+.recruitment .recruitment-box .job-table tr:last-child {
   margin-bottom: 0;
 }
-#recruitment-jp .recruitment .job-table tr th {
+.recruitment .recruitment-box .job-table tr th {
   width: 20%;
   font-weight: 500;
   color: #3c83bb;
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .job-table tr th {
+  .recruitment .recruitment-box .job-table tr th {
     width: 100%;
     margin-bottom: 8px;
   }
 }
-#recruitment-jp .recruitment .job-table tr th span {
+.recruitment .recruitment-box .job-table tr th span {
   display: block;
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .job-table tr th span {
+  .recruitment .recruitment-box .job-table tr th span {
     display: inline-block;
   }
 }
-#recruitment-jp .recruitment .job-table tr td {
+.recruitment .recruitment-box .job-table tr td {
   width: 80%;
   font-weight: 300;
 }
 @media (max-width: 430px) {
-  #recruitment-jp .recruitment .job-table tr td {
+  .recruitment .recruitment-box .job-table tr td {
     width: 100%;
   }
 }
-#recruitment-jp .recruitment .job-table tr td ul li {
+.recruitment .recruitment-box .job-table tr td ul li {
   margin-bottom: 16px;
+}
+
+@media (max-width: 650px) {
+  .recruitment-en .recruitment-box .job-table tr {
+    flex-direction: column;
+  }
+}
+.recruitment-en .recruitment-box .job-table tr th {
+  width: 30%;
+}
+@media (max-width: 650px) {
+  .recruitment-en .recruitment-box .job-table tr th {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+.recruitment-en .recruitment-box .job-table tr td {
+  width: 70%;
+}
+@media (max-width: 650px) {
+  .recruitment-en .recruitment-box .job-table tr td {
+    width: 100%;
+  }
+}
+.recruitment-en .recruitment-box .job-table tr td span {
+  font-weight: 700;
 }
 
 .contact .fv {
@@ -1546,10 +1579,10 @@ h4 {
 .contact .contact-form {
   margin-bottom: 96px;
 }
-.contact .contact-form form {
+.contact .contact-form .container {
   width: 100%;
 }
-.contact .contact-form form .form-item {
+.contact .contact-form .container .form-item {
   width: 100%;
   height: 150px;
   display: flex;
@@ -1558,12 +1591,12 @@ h4 {
   margin-bottom: 16px;
 }
 @media (max-width: 900px) {
-  .contact .contact-form form .form-item {
+  .contact .contact-form .container .form-item {
     flex-direction: column;
     margin-bottom: 24px;
   }
 }
-.contact .contact-form form .form-item .title {
+.contact .contact-form .container .form-item .title {
   width: 25%;
   height: 100%;
   display: flex;
@@ -1576,13 +1609,13 @@ h4 {
   margin-right: 40px;
 }
 @media (max-width: 900px) {
-  .contact .contact-form form .form-item .title {
+  .contact .contact-form .container .form-item .title {
     width: 100%;
     margin-right: 0;
     margin-bottom: 24px;
   }
 }
-.contact .contact-form form .form-item .title span {
+.contact .contact-form .container .form-item .title span {
   display: inline-block;
   font-size: 1rem;
   line-height: 1;
@@ -1590,50 +1623,50 @@ h4 {
   border: 1px solid red;
   padding: 2px;
 }
-.contact .contact-form form .form-item .input-area {
+.contact .contact-form .container .form-item .input-area {
   width: 75%;
 }
 @media (max-width: 900px) {
-  .contact .contact-form form .form-item .input-area {
+  .contact .contact-form .container .form-item .input-area {
     width: 100%;
   }
 }
-.contact .contact-form form .form-item .input-area input {
+.contact .contact-form .container .form-item .input-area input {
   display: inline-block;
 }
-.contact .contact-form form .form-item .input-area .input {
+.contact .contact-form .container .form-item .input-area .input {
   width: 100%;
   font-size: 1.4rem;
   border: 1px solid rgb(228, 223, 223);
   padding: 24px 24px;
 }
-.contact .contact-form form .form-item .input-area .input::-moz-placeholder {
+.contact .contact-form .container .form-item .input-area .input::-moz-placeholder {
   color: rgb(228, 223, 223);
 }
-.contact .contact-form form .form-item .input-area .input::placeholder {
+.contact .contact-form .container .form-item .input-area .input::placeholder {
   color: rgb(228, 223, 223);
 }
-.contact .contact-form form .form-item .input-area .radio {
+.contact .contact-form .container .form-item .input-area .radio {
   font-weight: 300;
   cursor: pointer;
   margin-right: 32px;
 }
-.contact .contact-form form .form-item .input-area .radio:last-child {
+.contact .contact-form .container .form-item .input-area .radio:last-child {
   margin-right: 0;
 }
-.contact .contact-form form .form-item .input-area .radio input {
+.contact .contact-form .container .form-item .input-area .radio input {
   margin-right: 8px;
 }
-.contact .contact-form form .form-textrea {
+.contact .contact-form .container .form-textrea {
   height: 200px;
 }
 @media (max-width: 900px) {
-  .contact .contact-form form .form-textrea {
+  .contact .contact-form .container .form-textrea {
     height: 150px;
     display: inline-block;
   }
 }
-.contact .contact-form form .form-textrea .textarea {
+.contact .contact-form .container .form-textrea .textarea {
   width: 100%;
   height: 200px;
   display: inline-block;
@@ -1641,44 +1674,44 @@ h4 {
   padding: 16px 24px;
 }
 @media (max-width: 900px) {
-  .contact .contact-form form .form-textrea .textarea {
+  .contact .contact-form .container .form-textrea .textarea {
     height: 150px;
   }
 }
-.contact .contact-form form .privacy {
+.contact .contact-form .container .privacy {
   margin-top: 96px;
   margin-bottom: 96px;
 }
-.contact .contact-form form .privacy .wrapper {
+.contact .contact-form .container .privacy .wrapper {
   font-weight: 300;
 }
-.contact .contact-form form .privacy .wrapper .privacy-box {
+.contact .contact-form .container .privacy .wrapper .privacy-box {
   height: 200px;
   border: 1px solid rgb(228, 223, 223);
   overflow-y: auto;
   padding: 32px;
   margin-bottom: 32px;
 }
-.contact .contact-form form .privacy .wrapper .privacy-box h3 {
+.contact .contact-form .container .privacy .wrapper .privacy-box h3 {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 24px;
 }
-.contact .contact-form form .privacy .wrapper .privacy-box .privacy-scroll h4 {
+.contact .contact-form .container .privacy .wrapper .privacy-box .privacy-scroll h4 {
   font-size: 1.6rem;
   font-weight: 300;
 }
-.contact .contact-form form .privacy .wrapper .privacy-box .privacy-scroll p {
+.contact .contact-form .container .privacy .wrapper .privacy-box .privacy-scroll p {
   margin-bottom: 32px;
 }
-.contact .contact-form form .privacy .wrapper .privacy-box .privacy-scroll ul {
+.contact .contact-form .container .privacy .wrapper .privacy-box .privacy-scroll ul {
   margin-bottom: 32px;
 }
-.contact .contact-form form .privacy .privacy-check {
+.contact .contact-form .container .privacy .privacy-check {
   text-align: center;
 }
-.contact .contact-form form .privacy .privacy-check .privacy-label {
+.contact .contact-form .container .privacy .privacy-check .privacy-label {
   cursor: pointer;
 }
 .contact .contact-form .form-submit {
@@ -1689,4 +1722,8 @@ h4 {
   color: #fff;
   background-color: #0C3256;
   padding: 12px 40px;
+}
+.contact .contact-form .form-submit .wpcf7-spinner,
+.contact .contact-form .form-submit span {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

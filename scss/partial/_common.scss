@@ -14,8 +14,7 @@ $border: rgba(228, 223, 223, 1);
 $shadow: 12px 12px 8.4px rgba(0, 0, 0, 0.25);
 
 // フォント
-$ff-sans: "Noto Sans JP", sans-serif;
-$ff-jost: "Jost", sans-serif;
+$ff-outfit: "Outfit", sans-serif;
 
 $fs-h2: 5rem;
 $fs-h3: 5.9rem;
@@ -58,7 +57,7 @@ html {
 
 body {
   font-size: 1.6em;
-  font-family: $ff-sans;
+  font-family: $ff-outfit;
   // font-weight: $fw-bold;
   letter-spacing: $ls-4;
 }
@@ -131,7 +130,6 @@ img {
 }
 
 .section-title {
-  font-family: $ff-jost;
   font-size: $fs-h3;
   letter-spacing: $ls-9;
   color: $blue-3;
@@ -163,7 +161,6 @@ h4 {
 
 .btn {
   font-size: $fs-24;
-  font-family: $ff-jost;
   font-weight: $fw-base;
   letter-spacing: $ls-6;
   border: 1px solid $black;
@@ -199,4 +196,8 @@ h4 {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.no_post {
+  color: $black;
 }

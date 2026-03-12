@@ -13,7 +13,7 @@
   .contact-form {
     margin-bottom: $section-space-pc;
 
-    form {
+    .container {
       width: 100%;
 
       .form-item {
@@ -179,6 +179,11 @@
         color: $white;
         background-color: $blue-3;
         padding: 12px 40px;
+      }
+
+      .wpcf7-spinner,
+      span {
+        display: none;
       }
     }
   }

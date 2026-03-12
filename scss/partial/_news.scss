@@ -27,7 +27,6 @@
         }
 
         .post {
-          font-family: $ff-jost;
 
           a {
             transition: .3s ease;
@@ -67,7 +66,8 @@
         text-align: center;
         margin-top: $section-space-sp;
         
-        a {
+        a,
+        span {
           cursor: pointer;
           color: $blue-3;
           font-weight: $fw-bold;
@@ -88,15 +88,21 @@
           }
         }
 
-        .page {
+        .page-numbers:not(.prev):not(.next) {
           width: 35px;
           height: 35px;
           border: 1px solid $blue-3;
+          display: inline-block;  // ← width/heightを効かせるために追加
+          text-align: center;
         }
-
+        
         .current {
+          width: 35px;
+          height: 35px;
           color: $white;
           background-color: $blue-3;
+          display: inline-block;  // ← 追加
+          text-align: center;
         }
       }
     }
